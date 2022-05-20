@@ -2,7 +2,7 @@
 
 So before going into React let's try to understand the problem it solves. To do that we will be making a small application using JavaScript named "Movie Watch List App". To create this application use HTML, CSS and JavaScript.
 
-Make sure to watch this video before making the application
+Make sure  to watch this video before making the application
 
 <div class="youtube-embed">
   <iframe src="https://www.youtube-nocookie.com/embed/LXdVy6MfUkk?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
