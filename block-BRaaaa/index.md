@@ -21,4 +21,4 @@ Make sure  to watch this video before making the application
 - In this folder you will find a `html`, `css` and `js` file.
 - Add code in the respective files
 
-![Movie Watch List](https://github.com/nnnkit/ac-js-images/blob/master/react/movie-watch.jpg?raw=true)
+![Movie Watch List](https://github.com/nnnkit/ac-js-images/blob/master/react/movie-watch.jpg?raw=tru e)
