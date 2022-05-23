@@ -59,12 +59,12 @@ function handleChange(event){
 // }
 
 function createMovieUI(data,root){
-    let elm=React.createElement;
-    let ui=data.map((movie,i)=>{
-        let li=elm('li',
+    
+    let movieUI=data.map((movie,i)=>{
+        return React.createElement('li',
          null, 
-         elm('label',{for:i},movie.name),
-         elm('button', {id:i, onclick:handleChange},
+         React.createElement('label',{for:i},movie.name),
+         React.createElement('button', {id:i, onClick : handleChange},
          movie.watched ? 'Watched':'To Watch')
          );
         // let button=document.createElement('button');;
@@ -74,10 +74,8 @@ function createMovieUI(data,root){
         // let label=document.createElement('label');
         // label.for=i;
         // label.innerText=movie.name;
-        return li;
-        // rootElm.append(li);
     });
-    ReactDOM.render(ui,li);
+    ReactDOM.render(movieUI,root)
 }
 
 createMovieUI(allMovies,rootElm);
