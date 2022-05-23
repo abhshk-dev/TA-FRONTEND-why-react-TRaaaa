@@ -54,7 +54,7 @@ input.addEventListener('keyup',(event)=>{
 })
 function handleChange(event){
     let id=event.target.id;
-    console.log(id)
+    
     allMovies[id].watched=!allMovies[id].watched;
     createMovieUI(allMovies,rootElm);
 }
@@ -63,12 +63,12 @@ function handleChange(event){
 function createMovieUI(data,root){
     
     let movieUI=data.map((movie,i)=>{
-        return React.createElement('li',
-         null, 
-         React.createElement('label',{for:i},movie.name),
-         React.createElement('button', {id:i, onClick : handleChange},
-         movie.watched ? 'Watched':'To Watch')
-         );
+        // return React.createElement('li',
+        //  null, 
+        //  React.createElement('label',{for:i},movie.name),
+        //  React.createElement('button', {id:i, onClick : handleChange},
+        //  movie.watched ? 'Watched':'To Watch')
+        //  );
         // let button=document.createElement('button');;
         // button.id=i;
         // button.innerText=movie.watched? 'Watched': 'To Watch';
@@ -76,8 +76,15 @@ function createMovieUI(data,root){
         // let label=document.createElement('label');
         // label.for=i;
         // label.innerText=movie.name;
+
+       return( <li key={movie.name}>
+            <label htmlFor={i}>{movie.name}</label>
+            <button id={i} onClick={handleChange}>{movie.watched ? 'Watched':'To Watch'}</button>
+        </li>
+       );
     });
     ReactDOM.render(movieUI,root)
+    
 }
 
 createMovieUI(allMovies,rootElm);
