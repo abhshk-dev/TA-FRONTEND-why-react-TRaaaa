@@ -55,9 +55,73 @@ table {
 *::after{
     box-sizing: border-box;
 }
+body{
+    padding: 32px 0;
+    font-family: monospace;
+}
+.container{
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    
+    border: 1px solid black;
+}
+img{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
 
-.card-img{
-    width: 600px;
-    height: 600px;
-    object-fit: cover;
+.content{
+    padding: 32px ;
+    text-align: left;
+}
+
+.content h1{
+    color: #011;
+    font-size: 32px;
+    font-weight: 600;
+    font-family:monospace;
+}
+.content h3{
+    color: lightcoral;
+    margin-top: 12px;
+    font-size: 24px;
+}
+.content p{
+    line-height: 1.6;
+    color: rgb(179, 171, 171);
+    font-size: 18px;
+    padding: 16px 0;
+}
+span{
+    margin-top: 24px;
+    margin-right: 14px;
+    color: rgb(108, 136, 126);
+}
+.date{
+    position: absolute;
+    color: #fff;
+    background-color: coral;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; 
+    right: 20px;
+    top: 20px;
+}
+
+.category{
+    color: #fff;
+    background-color: coral;
+    font-size: 16px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 245px;
+    text-transform: uppercase;
 }

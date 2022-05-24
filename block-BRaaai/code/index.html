@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+      <main>
+        <!-- <div class="container">
+            <div class="date">
+             27<br> MAR
+            </div>
+            <div class="category">
+                <small>
+                    PHOTOS
+                </small>
+            </div>
+            <img src="https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-article">
+            <div class="content">
+                <h1>City Lights in New York</h1>
+                <h3>The city that never sleeps</h3>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsam quasi unde sit quis quae modi lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Blanditiis minus magnam laboriosam.
+                </p>
+                <span class="time">6 mins ago</span>
+                <span  class="comments">39 Comments</span>
+            </div>
+        </div> -->
+        
+      </main>
+
+
+
+
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -31,9 +60,47 @@
           "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
       };
 
-      let img= <img src={cardInfo.imageURL} className="card-img"/>
 
-      ReactDOM.render(img,document.querySelector('body'));
+      let root=document.querySelector('main');
+      let months=[
+          "JAN",
+          "FEB",
+          "MAR",
+          "APR",
+          "MAY",
+          "JUN",
+          "JUL",
+          "AUG",
+          "SEP",
+          "OCT",
+          "NOV",
+          "DEC"
+      ]
+      let ui=(
+        <div className="container">
+            <div className="date">
+             {cardInfo.date.getDate()} <br/>
+             {months[cardInfo.date.getMonth()]}
+            </div>
+            <div className="category">
+                <small>
+                    {cardInfo.category}
+                </small>
+            </div>
+            <img src={cardInfo.imageURL} alt="card-article"/>
+            <div className="content">
+                <h1>{cardInfo.title}</h1>
+                <h3>{cardInfo.subTitle}</h3>
+                <p>
+                    {cardInfo.description}
+                </p>
+                <span className="time">6 mins ago</span>
+                <span  className="comments">{cardInfo.comments } comments</span>
+            </div>
+        </div>
+      );
+
+      ReactDOM.render(ui,root);
 
     </script>
   </body>
