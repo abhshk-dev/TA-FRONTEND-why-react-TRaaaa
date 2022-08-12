@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Watch List</title>
+  </head>
+  <body>
+    <header>
+      <h1>My Movie Watch List</h1>
+    </header>
+    <main>
+      <div class="container">
+        <input type="text" class="input" placeholder="Enter Movie" />
+        <ul class="todos"></ul>
+      </div>
+    </main>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        let input=document.querySelector('input[type="text"]');
+
+let rootElm=document.querySelector('.todos');
+
+let allMovies=[
+{
+    name:'Forest Gump',
+    watched: false,
+},
+{
+    name:'Inception',
+    watched:true,
+}
+];
+
+input.addEventListener('keyup',(event)=>{
+    if(event.keyCode === 13){
+        allMovies.push({
+            name:event.target.value,
+            watched:false,
+        });
+        event.target.value='';
+        createMovieUI(allMovies,rootElm);
+    }
+})
+function handleChange(event){
+    let id=event.target.id;
+    
+    allMovies[id].watched=!allMovies[id].watched;
+    createMovieUI(allMovies,rootElm);
+}
+
+
+function createMovieUI(data,root){
+    
+    let movieUI=data.map((movie,i)=>{
+        // return React.createElement('li',
+        //  null, 
+        //  React.createElement('label',{for:i},movie.name),
+        //  React.createElement('button', {id:i, onClick : handleChange},
+        //  movie.watched ? 'Watched':'To Watch')
+        //  );
+        // let button=document.createElement('button');;
+        // button.id=i;
+        // button.innerText=movie.watched? 'Watched': 'To Watch';
+        // button.addEventListener('click',handleChange);
+        // let label=document.createElement('label');
+        // label.for=i;
+        // label.innerText=movie.name;
+
+       return( <li key={movie.name}>
+            <label htmlFor={i}>{movie.name}</label>
+            <button id={i} onClick={handleChange}>{movie.watched ? 'Watched':'To Watch'}</button>
+        </li>
+       );
+    });
+    ReactDOM.render(movieUI,root)
+    
+}
+
+createMovieUI(allMovies,rootElm);
+
+    </script>
+  </body>
+</html>
