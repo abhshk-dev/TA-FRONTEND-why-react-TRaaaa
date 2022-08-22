@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog site</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main class="wrapper">
-        
-        <!-- <section class="article-row">
+      <h1 class="heading">All Articles</h1>
+      <h3 class="sub-heading">Collection of best articles on startups</h3>
+      <!-- <section class="article-row">
             <div class="container flex-25">
                 <div class="date">
                  27<br> MAR
@@ -89,43 +90,45 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        let articles = [
-    {
-      title: 'City Lights in New York',
-      date: new Date('2017-01-26'),
-      comments: 67,
-      subTitle: 'The city that never sleeps.',
-      description:
-        'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
-      category: 'photos',
-      imageURL:
-        'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    },
-    {
-      title: 'Twitter’s decentralized future',
-      date: new Date('2021-01-16'),
-      comments: 43,
-      subTitle: 'The decentralized future of twitter.',
-      description:
-        'The platform’s vision of a sweeping open standard could also be the far-right’s internet endgame',
-      category: 'social network',
-      imageURL:
-        'https://techcrunch.com/wp-content/uploads/2019/09/twitter-hidden-replies1.png?resize=1536,816',
-    },
-    {
-      title:
-        'Startups look beyond lidar for autonomous vehicle perception',
-      date: new Date('2017-07-26'),
-      comments: 17,
-      subTitle:
-        'Lidar pushed ahead of traditional cameras because it could do things they couldn’t',
-      description:
-        'Last CES was a time of reckoning for lidar companies, many of which were cratering due to a lack of demand from a (still) non-existent autonomous vehicle industry. ',
-      category: 'future',
-      imageURL:
-        'https://techcrunch.com/wp-content/uploads/2019/07/GettyImages-846875220.jpg?w=1390&crop=1',
-    },
-  ];
+      let cardInfo = {
+        title: "City Lights in New York",
+        date: new Date("2017-01-26"),
+        comments: 67,
+        subTitle: "The city that never sleeps.",
+        description:
+          "New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.",
+        category: "photos",
+        imageURL:
+          "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      };
+      function Article(props) {
+        console.log(props);
+        return (
+          <div className="container">
+            <div className="date">
+              {props.articleInfo.date.getDate()} <br />
+              {months[props.articleInfo.date.getMonth()]}
+            </div>
+            <div className="category">
+              <small>{props.articleInfo.category}</small>
+            </div>
+            <img src={props.articleInfo.imageURL} alt="card-article" />
+            <div className="content">
+              <h1>{props.articleInfo.title}</h1>
+              <h3>{props.articleInfo.subTitle}</h3>
+              <p>{props.articleInfo.description}</p>
+              <span className="time">6 mins ago</span>
+              <span className="comments">
+                {props.articleInfo.comments} comments
+              </span>
+            </div>
+          </div>
+        );
+      }
+      function Articles() {
+        return articles.map((article) => <Article articleInfo={article} />);
+      }
+      ReactDOM.render(<Articles />, document.querySelector(".wrapper"));
     </script>
-</body>
+  </body>
 </html>
