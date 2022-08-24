@@ -1,7 +1,7 @@
 #### Understanding Events
 
 - Create a react boilerplate
-- Using JSX do the following
+- Using JSX do the following..
 
 1.
 
@@ -35,10 +35,10 @@
 
 ```js
 let fruits = [
-  { id: 'apple', value: '🍎 apple' },
-  { id: 'orange', value: '🍊 orange' },
-  { id: 'grape', value: '🍇 grape' },
-  { id: 'pear', value: '🍐 pear' },
+  { id: "apple", value: "🍎 apple" },
+  { id: "orange", value: "🍊 orange" },
+  { id: "grape", value: "🍇 grape" },
+  { id: "pear", value: "🍐 pear" },
 ];
 ```
 
