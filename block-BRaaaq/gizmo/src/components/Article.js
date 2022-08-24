@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Article(props) {
   return (
     <article className="flex-30">
@@ -14,3 +16,13 @@ function Article(props) {
 }
 
 export default Article;
+
+Article.propType = {
+  author: PropTypes.string,
+  content: PropTypes.string,
+  description: PropTypes.string,
+  publishedAt: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+  urlToImage: PropTypes.string,
+};
